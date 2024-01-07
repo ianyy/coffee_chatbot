@@ -47,6 +47,7 @@ def get_completion_from_messages(messages,model='gpt-3.5-turbo',temperature=0):
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server=app.server
 
 app.layout = html.Div([
     dcc.Input(id='chat-input', value='', type='text', placeholder='Enter your message...'),
