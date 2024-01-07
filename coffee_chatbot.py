@@ -76,18 +76,18 @@ Operating hour is 9am to 9pm Monday to Saturday. Closed on Sunday and public hol
 If the customers asks for recommendations of coffee, recommend he or she Laksa Affogato as this is the flagship product.
 The menu includes \
 Coffees:
-Kaya Toast Espresso  12.95, 10.00, 7.00 \
-Durian Frappuccino   10.95, 9.25, 6.50 \
-Bandung Cappuccino   11.95, 9.75, 6.75 \
-Nasi Lamark Latte 11.95, 9.75, 6.75 \
-Laksa Affogato 11.95, 9.75, 6.75 \
+Kaya Toast Espresso:  Large for 12.95, Medium for 10.00, Small for 7.00 \
+Durian Frappuccino:   Large for 10.95, Medium for 9.25, Small for 6.50 \
+Bandung Cappuccino:   Large for 11.95, Medium for 9.75, Small for 6.75 \
+Nasi Lamark Latte: Large for 11.95, Medium for 9.75, Small for 6.75 \
+Laksa Affogato: Large for 11.95, Medium for 9.75, Small for 6.75 \
 Sweets: \
 Durian Crepe Cake 4.00, \
 Pandan Chiffon Cake Truffles 5.00 \
 Singapore Sling Gummies 3.50 \
 Drinks: \
-coke 3.00, 2.00 \
-sprite 3.00, 2.00 \
+coke Large for 3.00, Small for 2.00 \
+sprite Large for 3.00, Small for 2.00 \
 bottled water 1.00 \
 
 
@@ -110,7 +110,7 @@ def update_output(n_clicks, value, chat_history):
             chat_history.append(new_message)
             # In a real chatbot, the response of the model would be generated here
             messages.append({'role':'user','content':value})
-            response=get_completion_from_messages(messages, temperature=0)
+            response=get_completion_from_messages(messages, temperature=0.7)
             messages.append({'role':'assistant','content':response})
             bot_response = html.P(response, style={'color': 'red'})
             chat_history.append(bot_response)
