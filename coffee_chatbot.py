@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 import dash
@@ -13,14 +13,14 @@ from openai import OpenAI
 import os
 
 
-# In[2]:
+# In[ ]:
 
 
 api_key=os.environ.get("OPENAI_API_KEY")
 base_url=os.environ.get("OPENAI_BASE_URL")
 
 
-# In[3]:
+# In[ ]:
 
 
 client = OpenAI(
@@ -30,7 +30,7 @@ client = OpenAI(
 )
 
 
-# In[4]:
+# In[ ]:
 
 
 def get_completion_from_messages(messages,model='gpt-3.5-turbo',temperature=0):
@@ -41,7 +41,7 @@ def get_completion_from_messages(messages,model='gpt-3.5-turbo',temperature=0):
     return response.choices[0].message.content
 
 
-# In[5]:
+# In[ ]:
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -50,14 +50,12 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server=app.server
 
 app.layout = html.Div([
+    html.Div(id='chat-history', children=[]),
     dcc.Input(id='chat-input', value='', type='text', placeholder='Enter your message...'),
-    html.Button('Submit', id='button', n_clicks=0),
-    html.Div(id='chat-output'),
-    html.Div(id='chat-history', children=[])
-])
+    html.Button('Submit', id='button', n_clicks=0)])
 
 
-# In[6]:
+# In[ ]:
 
 
 messages=[{'role':'system','content':"""
@@ -90,17 +88,16 @@ coke Large for 3.00, Small for 2.00 \
 sprite Large for 3.00, Small for 2.00 \
 bottled water 1.00 \
 
-
 """}]
 
 
-# In[7]:
+# In[ ]:
 
 
 @app.callback(
     Output('chat-history', 'children'),
-    [Input('button', 'n_clicks')],
-    [State('chat-input', 'value'),
+    [Input('button', 'n_clicks'),
+    State('chat-input', 'value'),
      State('chat-history', 'children')]
 )
 def update_output(n_clicks, value, chat_history):
@@ -118,8 +115,8 @@ def update_output(n_clicks, value, chat_history):
 
 @app.callback(
     Output('chat-input', 'value'),
-    [Input('button', 'n_clicks')],
-    [State('chat-input', 'value')]
+    [Input('button', 'n_clicks'),
+    State('chat-input', 'value')]
 )
 def clear_input(n_clicks, value):
     if n_clicks > 0:
@@ -128,7 +125,7 @@ def clear_input(n_clicks, value):
         return value
 
 
-# In[8]:
+# In[ ]:
 
 
 if __name__ == '__main__':
