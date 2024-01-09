@@ -123,7 +123,7 @@ def update_output(n_clicks, value, chat_history):
             chat_history.append(new_message)
             # In a real chatbot, the response of the model would be generated here
             messages.append({'role':'user','content':value})
-            response=get_completion_from_messages(messages, temperature=0.7)
+            response=get_completion_from_messages(messages, temperature=0)
             messages.append({'role':'assistant','content':response})
             bot_response = html.P(response, style={'color': 'red'})
             chat_history.append(bot_response)
