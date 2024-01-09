@@ -91,11 +91,11 @@ Once the customer confirms the order, do the following:
 
 ## Menu
 ### Coffees:
-   -  Kaya Toast Espresso:  Large for 12.95, Medium for 10.00, Small for 7.00 
-   -  Durian Frappuccino:   Large for 10.95, Medium for 9.25, Small for 6.50 
-   -  Bandung Cappuccino:   Large for 11.95, Medium for 9.75, Small for 6.75 
-   -  Nasi Lamak Latte: Large for 11.95, Medium for 9.75, Small for 6.75 
-   -  Laksa Affogato: Large for 11.95, Medium for 9.75, Small for 6.75 
+   -  Kaya Toast Espresso:  Large for 12, Medium for 10, Small for 7
+   -  Durian Frappuccino:   Large for 11, Medium for 9, Small for 6
+   -  Bandung Cappuccino:   Large for 11, Medium for 9, Small for 6 
+   -  Nasi Lamak Latte: Large for 11, Medium for 9, Small for 6 
+   -  Laksa Affogato: Large for 13, Medium for 11, Small for 8
 ### Sweets: 
    -  Durian Crepe Cake 4.00,
    -  Pandan Chiffon Cake Truffles 5.00 
